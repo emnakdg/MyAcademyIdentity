@@ -44,8 +44,11 @@ namespace EmailApp.Controllers
             return View(messages);
         }
 
-        public IActionResult MessageDetail(int id)
+        public async Task<IActionResult> MessageDetail(int id)
         {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            ViewBag.UserFirstName = user.FirstName;
+            ViewBag.UserLastName = user.LastName;
             var message = _context.Messages.Include(x => x.Sender).FirstOrDefault(x => x.MessageId == id);
             return View(message);
         }
