@@ -1,0 +1,56 @@
+﻿<div class="col-md-3">
+    <a href="/Message/SendMessage/" class="btn btn-primary btn-block mb-3">Yeni Mail Oluştur</a>
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">İşlemler</h3>
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item active">
+                    <a href="/Message/Index/" class="nav-link">
+                        <i class="fas fa-inbox"></i> Gelen Kutusu
+                        <span class="badge bg-cyan float-right">@ViewBag.InboxMessage</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Message/Sendbox/" class="nav-link">
+                        <i class="fas fa-paper-plane"></i> Giden Kutusu
+                        <span class="badge bg-blue float-right">@ViewBag.sendboxMessage</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Message/ReadList/" class="nav-link">
+                        <i class="fas fa-envelope-open"></i> Okunan Mesajlar
+                        <span class="badge bg-green float-right">@ViewBag.readMessage</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Message/UnReadList/" class="nav-link">
+                        <i class="far fa-envelope"></i> Okunmayan Mesajlar
+                        <span class="badge bg-danger float-right">@ViewBag.unreadMessage</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Message/DraftList/" class="nav-link">
+                        <i class="far fa-file-alt"></i> Taslaklar
+                        <span class="badge bg-orange float-right">@ViewBag.draftMessage</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Message/DeletedList/" class="nav-link">
+                        <i class="far fa-trash-alt"></i> Çöp Kutusu
+                        <span class="badge bg-navy float-right">@ViewBag.deletedMessage</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.card-body -->
+    </div>
+</div>

@@ -1,0 +1,74 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Signup";
+}
+
+<body class="hold-transition register-page">
+    <div class="register-box">
+        <div class="register-logo">
+            <a href="/Register/Signup"><b>Admin</b>LTE</a>
+        </div>
+        <div class="card">
+            <div class="card-body register-card-body">
+                <p class="login-box-msg">Sisteme Kayıt Ol</p>
+
+                <form method="post">
+                    <div class="input-group mb-3">
+                        <input type="text" asp-for="FirstName" class="form-control" placeholder="İsim" required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" asp-for="LastName" class="form-control" placeholder="Soyisim" required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" asp-for="UserName" class="form-control" placeholder="Kullanıcı Adı" required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="email" asp-for="Email" class="form-control" placeholder="Email" required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" asp-for="Password" class="form-control" placeholder="Şifre" required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="text-danger">@Html.ValidationSummary()</span>
+
+                    <div class="row">
+                        <!-- /.col -->
+                        <div class="col-6">
+                            <a href="/Login/Index" class="btn btn-primary btn-block">Geri Dön</a>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-primary btn-block">Kayıt Ol</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+            </div>
+            <!-- /.form-box -->
+        </div>
+    </div>
+</body>

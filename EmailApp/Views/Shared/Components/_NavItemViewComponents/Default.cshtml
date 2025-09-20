@@ -1,0 +1,32 @@
+﻿@model List<Message>
+
+<li class="nav-item dropdown">
+    <a class="nav-link" data-toggle="dropdown" href="#">
+        <i class="far fa-comments"></i>
+        <span class="badge badge-danger navbar-badge">@ViewBag.messages</span>
+    </a>
+
+    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+        <h4 class="p-3">Okunmayan Mesajlar</h4>
+        @foreach (var item in Model)
+        {
+            <a href="/Message/MessageDetail/@item.MessageId" class="dropdown-item">
+                <!-- Message Start -->
+                <div class="media">
+                    <div class="media-body">
+                        <h3 class="dropdown-item-title">
+                            Kimden: @item.Sender.FirstName @item.Sender.LastName
+                            <span class="float-right text-sm text-danger"><i class="fas fa-mail-bulk"></i></span>
+                        </h3>
+                        <p class="text-sm">Konu: @item.Subject</p>
+                        <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>Tarih: @item.SendDate.ToShortDateString()</p>
+                    </div>
+                </div>
+                <!-- Message End -->
+            </a>
+
+        }
+        <div class="dropdown-divider"></div>
+        <a href="/Message/Index/" class="dropdown-item dropdown-footer">Tüm Mesajları Görüntüle</a>
+    </div>
+</li>

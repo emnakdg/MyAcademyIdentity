@@ -1,0 +1,61 @@
+﻿@model Message
+@{
+    ViewData["Title"] = "MessageDetail";
+    Layout = "~/Views/MainLayout/Index.cshtml";
+}
+
+<div class="col-md-9">
+    <div class="card card-primary card-outline">
+        <div class="card-header">
+            <h3 class="card-title">Mail İçeriği</h3>
+
+            <div class="card-tools">
+                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
+                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body p-0">
+            <div class="mailbox-read-info">
+                <h5>Konu: @Model.Subject</h5>
+                <h6>
+                    Kimden: @Model.Sender.Email
+                    <span class="mailbox-read-time float-right">Tarih: @Model.SendDate</span>
+                </h6>
+            </div>
+            <!-- /.mailbox-read-info -->
+            <div class="mailbox-controls with-border text-center">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Sil">
+                        <i class="far fa-trash-alt"></i>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Yönlendir">
+                        <i class="fas fa-share"></i>
+                    </button>
+                </div>
+                <!-- /.btn-group -->
+            </div>
+            <!-- /.mailbox-controls -->
+            <div class="mailbox-read-message">
+
+                <p>@Model.Body</p>
+
+            </div>
+            <!-- /.mailbox-read-message -->
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer bg-white">
+            <ul class="mailbox-attachments d-flex align-items-stretch clearfix">
+            </ul>
+        </div>
+        <!-- /.card-footer -->
+        <div class="card-footer">
+            <div class="float-right">
+                <button type="button" class="btn btn-default"><i class="fas fa-share"></i> Yönlendir</button>
+            </div>
+            <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Sil</button>
+        </div>
+        <!-- /.card-footer -->
+    </div>
+    <!-- /.card -->
+</div>
