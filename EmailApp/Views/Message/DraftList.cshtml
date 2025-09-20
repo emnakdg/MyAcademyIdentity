@@ -52,7 +52,20 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
+                                <td class="mailbox-star">
+                                    @if (item.IsImportant)
+                                    {
+                                        <a href="/Message/MarkAsNotImportant/@item.MessageId" title="Önemli değil olarak işaretle">
+                                            <i class="fas fa-star text-warning"></i>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="/Message/MarkAsImportant/@item.MessageId" title="Önemli olarak işaretle">
+                                            <i class="far fa-star text-muted"></i>
+                                        </a>
+                                    }
+                                </td>
                                 <td class="mailbox-name"><a href="/Message/MessageDetail/@item.MessageId/">Alıcı: @item.Receiver.FirstName @item.Receiver.LastName</a></td>
                                 <td class="mailbox-subject">
                                     Konu: <b>@item.Subject</b>

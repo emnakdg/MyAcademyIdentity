@@ -12,6 +12,7 @@
         public bool IsRead { get; set; }
         public bool IsDeleted { get; set; } = false;
         public bool IsDraft { get; set; }
+        public bool IsImportant { get; set; } = false;
         public DateTime SendDate { get; set; }
     }
 }

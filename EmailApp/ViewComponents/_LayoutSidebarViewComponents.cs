@@ -3,7 +3,6 @@ using EmailApp.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
 
 namespace EmailApp.ViewComponents
 {
@@ -22,6 +21,8 @@ namespace EmailApp.ViewComponents
             ViewBag.deletedMessage = _context.Messages.Include(x => x.Sender).Where(x => x.ReceiverId == user.Id && x.IsDeleted == true).Count();
 
             ViewBag.draftMessage = _context.Messages.Include(x => x.Receiver).Where(x => x.SenderId == user.Id && x.IsDraft == true).Count();
+
+            ViewBag.importantMessage = _context.Messages.Include(x => x.Sender).Where(x => x.ReceiverId == user.Id && x.IsImportant == true && x.IsDeleted == false).Count();
 
             return View();
         }
